@@ -34,8 +34,43 @@ cond = names == "natiq"
 data[cond] # -> True rows 
 data[~cond] # -> False rows
 
+arr = np.random.randn(7, 3)
+arr*=2
+arr[arr<0.5]=0
 
+arr[[1,2]] # array of second and third row
 
+#changing the columns order
+arr = np.arange(32).reshape(8, 4)
+arr[:, [3,2,1,0]]
 
+#transposing , dot product array
+arr.T
+np.dot(arr.T, arr)
 
+#unary ufanc
+np.sqrt(arr)
+np.modf(arr)
+np.exp(arr)
+# abs,fabs,square,log,ceil,rint ..
 
+# Array-oriented programming
+# sqrt(x^2+y^2)
+
+arr = np.arange(-5, 5, 0.01)
+xs, ys = np.meshgrid(arr, arr)
+z = np.sqrt(xs**2+ys**2)
+
+x_arr = np.array([1.1, 1.2, 1.3, 1.4])
+y_arr = np.array([2.1, 2.2, 2.3, 2.4])
+cond = [True, False, True, True]
+result = [(x if c else y) for x,y,c in zip(x_arr,y_arr,cond)] # [1.1, 2.2, 1.3, 1.4]
+result = np.where(cond, xarr, yarr)
+
+np.unique(arr)
+np.sort(arr)
+(arr>0).sum() # mean(), max(), min()
+
+#saving and loding numpy array
+np.save('some_array', arr)
+np.load('some_array.npy')
