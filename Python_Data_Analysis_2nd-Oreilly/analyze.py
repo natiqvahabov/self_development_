@@ -72,3 +72,40 @@ day = dt.day; hour=dt.hour
 
 #
 ''' Ternary Operators:  value = true-expr if condition else false-expr'''
+
+'''
+tuple is immutable object type
+can't modify object or change size
+
+a, b, *_ = (4,5,6)
+_ -> [5,6]
+
+list -> append, remove, pop, insert, extend, sort
+list[::-1] sort list in different way. list[::2] -> index 0,2,4...
+
+enumerate -> list = ["first", "second", "third"]
+			 mapping = {}
+			 for i,v in enumerate(list):
+			 	mapping[i]=v
+
+dict = {key1:value1, key2:value2}
+dict.keys(), dict.values(), pop, del, update
+
+immutability == hashability
+
+set -> A set is an unordered collection of unique elements
+
+nums = [1,2,3,4,5]
+{num:num**2 for num in nums if num>3}
+{4:16, 5:25}
+'''
+
+# lambda functions
+
+'''display fullname of user'''
+full_name = lambda name, surname : name.strip().title() + " " + surname.strip().title()
+full_name("  natiq", "vahabov ")
+
+''' sort authors with last name '''
+authors = ["Isaac Asimov", "Ray Bradbury", "Douglas Adams", "Arthur s. Clarke"]
+authors.sort(key = lambda surname: surname.split(" ")[-1].lower())
