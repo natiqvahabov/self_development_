@@ -53,3 +53,6 @@ tips = pd.read_csv('examples/tips.csv')
 tips['tip_pct'] = tips['tip'] / (tips['total_bill'] - tips['tip'])
 sns.barplot(x='tip_pct', y='day', data=tips, orient='h')
 
+# With tools like Bokeh and Plotly, it’s now possible to specify dynamic, interactive graphics in Python that are destined for a web browser.
+
+
